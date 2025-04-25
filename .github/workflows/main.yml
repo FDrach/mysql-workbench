@@ -98,7 +98,7 @@ jobs:
         apt-get update
 
         echo "Install extra deps"
-        apt-get install libmysqlclient-dev mysql-client
+        apt-get install libmysqlclient-dev mysql-client -y
 
         echo "Removing Conflicting iodbc (if present)..."
         apt-get remove -y iodbc || true
