@@ -97,6 +97,9 @@ jobs:
         echo "Updating Apt Cache..."
         apt-get update
 
+        echo "Install extra deps"
+        apt-get install libmysqlclient-dev mysql-client
+
         echo "Removing Conflicting iodbc (if present)..."
         apt-get remove -y iodbc || true
 
