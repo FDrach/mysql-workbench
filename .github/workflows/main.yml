@@ -137,6 +137,7 @@ jobs:
         echo "Configure Build with CMake..."
         mkdir -p /workspace/build # Create build dir inside the mounted workspace
         cd /workspace/build
+        rm -rf ./* #Why is there stuff in here?
         # Source code is at /workspace
         cmake .. \
           -DCMAKE_BUILD_TYPE=Release \
