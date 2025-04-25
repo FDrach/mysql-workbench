@@ -130,9 +130,9 @@ jobs:
         echo "Download ANTLR JAR..."
         # Note: Downloading inside chroot to ensure it uses chroot's network config
         cd /workspace
-        wget --no-verbose https://www.antlr.org/download/antlr-4.13.2-complete.jar -O antlr-complete.jar
+        wget --no-verbose https://www.antlr.org/download/antlr-4.13.2-complete.jar -O antlr-4.13.2-complete.jar
         echo "ANTLR JAR downloaded."
-        ls -l antlr-complete.jar
+        ls -l antlr-4.13.2-complete.jar
 
         echo "Configure Build with CMake..."
         mkdir -p /workspace/build # Create build dir inside the mounted workspace
@@ -141,7 +141,7 @@ jobs:
         # Source code is at /workspace
         cmake .. \
           -DCMAKE_BUILD_TYPE=Release \
-          -DWITH_ANTLR_JAR=/workspace/antlr-complete.jar \
+          -DWITH_ANTLR_JAR=/workspace/antlr-4.13.2-complete.jar \
           -DUSE_UNIXODBC=True \
           -DINSTALL_SCRIPTDIR=bin
 
