@@ -57,7 +57,7 @@ find_package(X11 REQUIRED)
 find_package(Threads REQUIRED)
 find_package(SWIG REQUIRED)
 include(${SWIG_USE_FILE})
-find_package(ANTLR4 REQUIRED)
+## find_package(ANTLR4 REQUIRED)
 
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
@@ -160,6 +160,8 @@ if(ANTLR_JAR_PATH AND Java_JAVA_EXECUTABLE)
 else()
   message(WARNING ${ANTLR_JAR_FILENAME} " or java runtime wasn't found which is required if you'd like to rebuild Lexer and Parser files")
 endif()
+
+find_package(ANTLR4 REQUIRED)
 
 
 if (UNIX)
